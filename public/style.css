@@ -1,73 +1,76 @@
-*{
+* {
     box-sizing: border-box;
+    font-family: "Lexend Tera", sans-serif;
 }
-html{
+html {
     /* background-color: black; */
 }
-body{
+body {
     height: 100%;
 }
-.container{
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-div.img-container, div.countdown{
+div.img-container,
+div.countdown {
     width: 90%;
     max-width: 1200px;
     height: 100%;
 }
-img{
+img {
     object-fit: cover;
+    object-position: center;
     width: 100%;
     height: 100%;
 }
-img::after{
-    content: "";
-    display: block;
-    padding-bottom: 100%;
+#special{
+    height: auto;
 }
-.countdown{
+
+.countdown {
     flex-direction: row;
     width: 90%;
     max-width: 800px;
 }
 
-.port-credit{
+.port-credit {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
 }
-.port-credit > img{
+
+.port-credit > img {
     width: 50%;
 }
 
-.xiong-di-men{
+.xiong-di-men {
     display: flex;
     flex-direction: row;
     width: 100%;
 }
-.xiong-di-men > img{
+.xiong-di-men > img {
     width: 50%;
 }
 
-.johnny-bday{
+.johnny-bday {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
 }
 
-.prom{
+.prom {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
 }
 
-.prom > .big-pic{
+.prom > .big-pic {
     grid-column: 2/4;
     grid-row: 2/4;
 }

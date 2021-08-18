@@ -4,10 +4,16 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Lexend+Tera&display=swap" rel="stylesheet" />
+        <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js" defer></script>
+        <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-storage.js" defer></script>
         <link rel="stylesheet" href="./style.css" />
         <title>Document</title>
     </head>
     <body class="container">
+        <h1>We're waiting for you</h1>
         <div class="countdown container">
             <h1 class="days">00</h1>
             <h1 class="colon">:</h1>
@@ -17,77 +23,78 @@
             <h1 class="colon">:</h1>
             <h1 class="seconds">00</h1>
         </div>
-        <script src="./index.js"></script>
+        <script src="./index.js" defer></script>
         <div class="img-container container">
             <div class="port-credit">
                 <!--square grid-->
-                <!-- <img id="test" src="https://drive.google.com/thumbnail?id=186oelV-t9ZVUH9OUPqdUhvcwYhzXmMGV"> -->
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=186oelV-t9ZVUH9OUPqdUhvcwYhzXmMGV" />
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1pxcRdAbDG0DBrxW39dUB6b7aEakw9M5W" />
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=19OCSjZOtCBNOPW7q_mvtxZpd_LWK9lxl" />
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1PSehAjrITLRAQolkC8UVq7M37boQFgyF" />
+                <img data-lazysrc="186oelV-t9ZVUH9OUPqdUhvcwYhzXmMGV" />
+                <img id="special" data-lazysrc="1pxcRdAbDG0DBrxW39dUB6b7aEakw9M5W" />
+                <img data-lazysrc="19OCSjZOtCBNOPW7q_mvtxZpd_LWK9lxl" />
+                <img data-lazysrc="1PSehAjrITLRAQolkC8UVq7M37boQFgyF" />
             </div>
             <div class="xiong-di-men">
                 <!--2 pics side by side-->
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1kh7GTf4gGluZacX1qOrSRd2zN0dfNxb3" />
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1kMzsMvNukGghtiDkek9vV4BqRf1Qr8DJ" />
+                <img data-lazysrc="1kh7GTf4gGluZacX1qOrSRd2zN0dfNxb3" />
+                <img data-lazysrc="1kMzsMvNukGghtiDkek9vV4BqRf1Qr8DJ" />
             </div>
+
+            <h1>Back at the land of memories</h1>
             <div class="johnny-bday">
                 <!--9 pic grid-->
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1cir998sOhoHi8MNXYsh6zFMPx6eZrNOg">
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1Qypv57qsr-UOpMnMRwwaswc9vx4SGIpL">
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1h2tzN56Pnt4lYJcUsvC3NlBJTkCXdxsM">
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1vmIjiujTtifpwLo0uVPQXNmYmHmJmaGG">
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1z1UbiVpaETchdZV8KnRSvnmvmIh2VfVE">
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1M-bXgGibDL0FxRSV8O6HCZO6lw3K-Z85">
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1_5H-P1TTj48A_A7PQAIhjlxR3-7zD-sz">
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1bS2eONUnXnRw-dCZVb2dJ296KgrHc7kz">
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1NkyDQFfpz52VEmhMZIDWukPa2kUEQFJB">
-                                
+                <img data-lazysrc="1cir998sOhoHi8MNXYsh6zFMPx6eZrNOg" />
+                <img data-lazysrc="1Qypv57qsr-UOpMnMRwwaswc9vx4SGIpL" />
+                <img data-lazysrc="1h2tzN56Pnt4lYJcUsvC3NlBJTkCXdxsM" />
+                <img data-lazysrc="1vmIjiujTtifpwLo0uVPQXNmYmHmJmaGG" />
+                <img data-lazysrc="1z1UbiVpaETchdZV8KnRSvnmvmIh2VfVE" />
+                <img data-lazysrc="1M-bXgGibDL0FxRSV8O6HCZO6lw3K-Z85" />
+                <img data-lazysrc="1_5H-P1TTj48A_A7PQAIhjlxR3-7zD-sz" />
+                <img data-lazysrc="1bS2eONUnXnRw-dCZVb2dJ296KgrHc7kz" />
+                <img data-lazysrc="1NkyDQFfpz52VEmhMZIDWukPa2kUEQFJB" />
             </div>
             <div class="prom">
                 <!--figma layout-->
-                <img class="big-pic" data-lazysrc="https://drive.google.com/thumbnail?id=1ZJaCh6SEliwO6562PG2htTSvYHbaeFIS" />
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1Kf9pe7AVOk7NDrAcx7YKH-FShqrcYCxC" />
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1YwMjvEg6OI8Ge_pFHWoGyDSKY5yJ_9Hx" />
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=13YHWj5dK5toDH_8UeDMSt8IDklBDmr6M" />
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1CfxoseUOOXwl5O9Cxc1ypiCLAQGK64iD" />
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1Zbd5Yn1XkY8QTbhAnYUcXqBMWEMi9AOS" />
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1r3_4ydeMYv9M3C6s7NF6ppRGaH6Y7OIE" />
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1-ACm2I3O_T0_NjtHI4ovQIOEX5-l9RLk" />
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=15VrzG2jIJtA_0uQ4bRpXlrGElR1XB-tI" />
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1NQetCBXDe07q2GvOTuJOPZAwcROBjQAN" />
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1pxho21Nsh5XUmoHaQ7leJMOiEUOQIUyo" />
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1KtxttwIwaEX0TLKBJ8_nYCoozyNIQeof" />
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1UrjAxkq3cCdt_AejDwFZE36sPiMw2LVj" />
+                <img class="big-pic" data-lazysrc="1ZJaCh6SEliwO6562PG2htTSvYHbaeFIS" />
+                <img data-lazysrc="1Kf9pe7AVOk7NDrAcx7YKH-FShqrcYCxC" />
+                <img data-lazysrc="1YwMjvEg6OI8Ge_pFHWoGyDSKY5yJ_9Hx" />
+                <img data-lazysrc="13YHWj5dK5toDH_8UeDMSt8IDklBDmr6M" />
+                <img data-lazysrc="1CfxoseUOOXwl5O9Cxc1ypiCLAQGK64iD" />
+                <img data-lazysrc="1Zbd5Yn1XkY8QTbhAnYUcXqBMWEMi9AOS" />
+                <img data-lazysrc="1r3_4ydeMYv9M3C6s7NF6ppRGaH6Y7OIE" />
+                <img data-lazysrc="1-ACm2I3O_T0_NjtHI4ovQIOEX5-l9RLk" />
+                <img data-lazysrc="15VrzG2jIJtA_0uQ4bRpXlrGElR1XB-tI" />
+                <img data-lazysrc="1NQetCBXDe07q2GvOTuJOPZAwcROBjQAN" />
+                <img data-lazysrc="1pxho21Nsh5XUmoHaQ7leJMOiEUOQIUyo" />
+                <img data-lazysrc="1KtxttwIwaEX0TLKBJ8_nYCoozyNIQeof" />
+                <img data-lazysrc="1UrjAxkq3cCdt_AejDwFZE36sPiMw2LVj" />
             </div>
             <div class="prom">
                 <!--figma layout-->
-                <img class="big-pic" data-lazysrc="https://drive.google.com/thumbnail?id=1n0MWt79KhhAVKtLFKh3v9MpIW4tuuZZo" />
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=15Gld6QHfeBAdAFiD8wuO8kvhnwXKQumC" />
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1lbeYPNHo_IeRmB5seOaom_59I0d5Kr03" />
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1wx8s6quEpgTNWOIM4iCBp4QBejksXcfH" />
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=19ynzsPK7VdnP4tBbHcoxezUGsyRCsm8V" />
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1sb37Gp4lDFXYYAzYzpeE4EShGqPfcMgp" />
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1O6E5hbVd2SU6-AIrT4coY0_e4PAwxNGN" />
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1o6kY0KSZJn38hxJqg-EuCGQleoRC0gyV" />
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1UPfSpSv7jBrfr7hLCfHbZccnt-FTvhjI" />
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1i8A9gzdGJ2JRe8FWW7OSNJu2RfIojwnb" />
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1if8SuuJO19DcSmFpKYLTwBn5BhTPBOn7" />
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1z4JYtbE3LGt0x7KhOSPfOxVIei1qBjHG" />
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1tVzewMdMBlyth2aFux-Xzff3h7UTJzGb" />
+                <img class="big-pic" data-lazysrc="1n0MWt79KhhAVKtLFKh3v9MpIW4tuuZZo" />
+                <img data-lazysrc="15Gld6QHfeBAdAFiD8wuO8kvhnwXKQumC" />
+                <img data-lazysrc="1lbeYPNHo_IeRmB5seOaom_59I0d5Kr03" />
+                <img data-lazysrc="1wx8s6quEpgTNWOIM4iCBp4QBejksXcfH" />
+                <img data-lazysrc="19ynzsPK7VdnP4tBbHcoxezUGsyRCsm8V" />
+                <img data-lazysrc="1sb37Gp4lDFXYYAzYzpeE4EShGqPfcMgp" />
+                <img data-lazysrc="1O6E5hbVd2SU6-AIrT4coY0_e4PAwxNGN" />
+                <img data-lazysrc="1o6kY0KSZJn38hxJqg-EuCGQleoRC0gyV" />
+                <img data-lazysrc="1UPfSpSv7jBrfr7hLCfHbZccnt-FTvhjI" />
+                <img data-lazysrc="1i8A9gzdGJ2JRe8FWW7OSNJu2RfIojwnb" />
+                <img data-lazysrc="1if8SuuJO19DcSmFpKYLTwBn5BhTPBOn7" />
+                <img data-lazysrc="1z4JYtbE3LGt0x7KhOSPfOxVIei1qBjHG" />
+                <img data-lazysrc="1tVzewMdMBlyth2aFux-Xzff3h7UTJzGb" />
             </div>
             <div class="misc">
                 <!--8 pic grid(4x2)-->
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=14eqkAwlbs4KBwbUu1xmDtddTv09l-RTw">
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1NzzYEBS3A9ZdRHk2IC5Ej7NQqSXBPeq0">
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1IRMcc8DqwB_LOmN_7o_DaVIMHg0vz0Lv">
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1U5mXFSt86P0-MhUBkSLZUOqay386A-gJ">
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=12XAmNsHeofgONZsuZQTP3u7sKPdpJ8cB">
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1TCLcvtguQnShYi9tePu_snTtM_qShJXB">
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1bxFsfpDNrTaOx0gNhRseZ5SCHxP-yn72">
-                <img data-lazysrc="https://drive.google.com/thumbnail?id=1vs-TTDX6pg1KO9Ujg2qrEeDVOXmsooX_">                
+                <img data-lazysrc="14eqkAwlbs4KBwbUu1xmDtddTv09l-RTw" />
+                <img data-lazysrc="1NzzYEBS3A9ZdRHk2IC5Ej7NQqSXBPeq0" />
+                <img data-lazysrc="1IRMcc8DqwB_LOmN_7o_DaVIMHg0vz0Lv" />
+                <img data-lazysrc="1U5mXFSt86P0-MhUBkSLZUOqay386A-gJ" />
+                <img data-lazysrc="12XAmNsHeofgONZsuZQTP3u7sKPdpJ8cB" />
+                <img data-lazysrc="1TCLcvtguQnShYi9tePu_snTtM_qShJXB" />
+                <img data-lazysrc="1bxFsfpDNrTaOx0gNhRseZ5SCHxP-yn72" />
+                <img data-lazysrc="1vs-TTDX6pg1KO9Ujg2qrEeDVOXmsooX_" />
             </div>
+            <h1>With wide open arms</h1>
         </div>
     </body>
 </html>

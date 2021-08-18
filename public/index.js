@@ -1,3 +1,13 @@
+var firebaseConfig = {
+    apiKey: "AIzaSyCX6rsagBUlP-oCZ63UFu96z4d8C8dnPdg",
+    authDomain: "byebye-harry.firebaseapp.com",
+    projectId: "byebye-harry",
+    storageBucket: "byebye-harry.appspot.com",
+    messagingSenderId: "38370028583",
+    appId: "1:38370028583:web:910d77985440eabe517202",
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 class Countdown {
     targetTime = new Date(2021, 11, 15);
     now;
@@ -25,11 +35,11 @@ class Countdown {
         }, 1000);
     }
 
-    render(){
+    render() {
         let classNames = ["days", "hours", "minutes", "seconds"];
-        for(let i = 0;i < this.time.length; i++){
+        for (let i = 0; i < this.time.length; i++) {
             let text = "";
-            if(this.time[i] < 10){
+            if (this.time[i] < 10) {
                 text += "0";
             }
             text += this.time[i].toString();
@@ -40,20 +50,34 @@ class Countdown {
     subtract(time) {
         let i = 3;
         while (time[i] - 1 < 0 && i > 0) {
-            time[i] = i == 1 ? 23: 59;
+            time[i] = i == 1 ? 23 : 59;
             i--;
         }
         time[i]--;
     }
 }
 let countdown = new Countdown();
+
+const storage = firebase.storage();
+class FirebaseStorageWrapper {
+    storage;
+    constructor(storage) {
+        this.storage = storage;
+    }
+
+    async getImage(path) {
+        let ref = this.storage.ref(path);
+        return await ref.getDownloadURL();
+    }
+}
+let storage_wrapper = new FirebaseStorageWrapper(storage);
+// let special = ["1_5H-P1TTj48A_A7PQAIhjlxR3-7zD-sz", "1NkyDQFfpz52VEmhMZIDWukPa2kUEQFJB", "1TCLcvtguQnShYi9tePu_snTtM_qShJXB", "1U5mXFSt86P0-MhUBkSLZUOqay386A-gJ"];
 window.onload = loadImages;
-function loadImages(){
+
+function loadImages() {
     console.log("starting load");
-    document.querySelectorAll("img").forEach(element=>{
-        element.src = element.getAttribute("data-lazysrc")
-        // element.style.background = `url("${element.getAttribute("data-lazysrc")}")`;
-        // element.style.backgroundCover = "cover";
-        // element.src = "./temp.png";
+    document.querySelectorAll("img").forEach(async (element) => {
+        let name = element.getAttribute("data-lazysrc");
+        element.src = await storage_wrapper.getImage(`${name}.jpg`);
     });
 }
