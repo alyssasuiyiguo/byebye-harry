@@ -15,6 +15,7 @@ class Countdown {
                 this.time[i] = Math.floor(diff / this.milis[i]);
                 diff %= this.milis[i];
             }
+            this.startCountdown();
         }
     }
     startCountdown() {
@@ -25,7 +26,15 @@ class Countdown {
     }
 
     render(){
-
+        let classNames = ["days", "hours", "minutes", "seconds"];
+        for(let i = 0;i < this.time.length; i++){
+            let text = "";
+            if(this.time[i] < 10){
+                text += "0";
+            }
+            text += this.time[i].toString();
+            document.querySelectorAll(`.${classNames[i]}`)[0].innerHTML = text;
+        }
     }
 
     subtract(time) {
@@ -37,7 +46,14 @@ class Countdown {
         time[i]--;
     }
 }
-
-window.onload = ()=>{
-    let countdown = new Countdown();
+let countdown = new Countdown();
+window.onload = loadImages;
+function loadImages(){
+    console.log("starting load");
+    document.querySelectorAll("img").forEach(element=>{
+        element.src = element.getAttribute("data-lazysrc")
+        // element.style.background = `url("${element.getAttribute("data-lazysrc")}")`;
+        // element.style.backgroundCover = "cover";
+        // element.src = "./temp.png";
+    });
 }
